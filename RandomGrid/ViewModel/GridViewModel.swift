@@ -8,18 +8,20 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 class GridViewModel {
     
     var inputColumm: Int = 3
     var inputRow: Int = 4
     var timer: Timer?
-    var updateTimeInterval: TimeInterval = 3
     var selectedIndex: CGPoint = .zero
     var disposeBag = DisposeBag()
+    
+    let updateTimeInterval: TimeInterval = 10
     let collectionCellMinimumLineSpacing: CGFloat = 0
     let rowSource = PublishSubject<[CustomSectionDataType]>()
-    let resetDidClick = PublishSubject<Void>()
+    var resetDidClick = PublishRelay<Void>()
     
     var row: Int {
         return inputRow + 1

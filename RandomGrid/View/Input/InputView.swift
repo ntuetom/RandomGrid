@@ -81,12 +81,12 @@ class InputView: InputContentView {
 
     func setupConstraint() {
         rowLabel.snp.makeConstraints { make in
-            make.height.equalTo(kScreenH/6)
+            make.height.equalTo(kScreenH/10)
             make.leading.equalToSuperview().offset(kOffset)
             make.top.equalToSuperview().offset(kOffset)
         }
         columnLabel.snp.makeConstraints { make in
-            make.height.equalTo(kScreenH/6)
+            make.height.equalTo(kScreenH/10)
             make.leading.equalToSuperview().offset(kOffset)
             make.top.equalTo(rowLabel.snp.bottom).offset(kOffset)
         }

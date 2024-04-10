@@ -8,11 +8,12 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 class GridCollectionButtonCell: UICollectionViewCell {
     
-    var disposeBag = DisposeBag(
-    )
+    var disposeBag = DisposeBag()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .darkGray
@@ -99,7 +100,7 @@ class GridCollectionButtonCell: UICollectionViewCell {
         }
     }
     
-    func setup(toggle: Bool, tapEvent: PublishSubject<Void>) {
+    func setup(toggle: Bool, tapEvent: PublishRelay<Void>) {
         toggleButton(toggel: toggle)
         if toggle {
             button.rx.tap.bind(to: tapEvent).disposed(by: disposeBag)
