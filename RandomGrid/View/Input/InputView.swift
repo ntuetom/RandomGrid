@@ -13,7 +13,6 @@ class InputView: InputContentView {
     let viewModel = InputViewModel()
     
     override init(frame: CGRect) {
-//        super.init(frame: CGRect(origin: .zero, size: CGSize(width: kScreenW/3*2, height: kScreenH/2)))
         super.init(frame: .zero)
         backgroundColor = .white
         setupSubView()
@@ -82,19 +81,25 @@ class InputView: InputContentView {
 
     func setupConstraint() {
         rowLabel.snp.makeConstraints { make in
+            make.height.equalTo(kScreenH/6)
             make.leading.equalToSuperview().offset(kOffset)
             make.top.equalToSuperview().offset(kOffset)
         }
         columnLabel.snp.makeConstraints { make in
+            make.height.equalTo(kScreenH/6)
             make.leading.equalToSuperview().offset(kOffset)
             make.top.equalTo(rowLabel.snp.bottom).offset(kOffset)
         }
         rowTextField.snp.makeConstraints { make in
+            make.width.equalTo(kScreenW*2/3)
+            make.height.equalTo(rowLabel)
             make.centerY.equalTo(rowLabel)
             make.leading.equalTo(rowLabel.snp.trailing).offset(kOffset)
             make.trailing.equalToSuperview().offset(-kOffset)
         }
         columnTextField.snp.makeConstraints { make in
+            make.width.equalTo(kScreenW*2/3)
+            make.height.equalTo(columnLabel)
             make.centerY.equalTo(columnLabel)
             make.leading.equalTo(rowTextField)
             make.trailing.equalToSuperview().offset(-kOffset)
@@ -111,18 +116,17 @@ class InputView: InputContentView {
     }
     
     @objc func onClick() {
-        deleage.onClose(data: (row: 3, column: 4))
-//        guard let row = rowTextField.text, let column = columnTextField.text else {
-//            return
-//        }
-//        viewModel.setData(row: row, column: column)
-//        let checkData = viewModel.checkValue()
-//        if checkData.isValid {
-//            deleage.onClose(data: (row: viewModel.row, column: viewModel.column))
-//            endEditing(true)
-//        } else {
-//            hintLabel.isHidden = false
-//            hintLabel.text = checkData.err
-//        }
+        guard let row = rowTextField.text, let column = columnTextField.text else {
+            return
+        }
+        viewModel.setData(row: row, column: column)
+        let checkData = viewModel.checkValue()
+        if checkData.isValid {
+            deleage.onClose(data: (row: viewModel.row, column: viewModel.column))
+            endEditing(true)
+        } else {
+            hintLabel.isHidden = false
+            hintLabel.text = checkData.err
+        }
     }
 }

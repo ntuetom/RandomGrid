@@ -15,7 +15,7 @@ class GridView: UIView {
     
     init(vm: GridViewModel, owner: AnyObject?, frame: CGRect? = nil) {
         viewModel = vm
-        super.init(frame: UIScreen.main.bounds)
+        super.init(frame: frame ?? .zero)
         self.owner = owner
         setupSubView()
         setupConstraint()
@@ -45,8 +45,8 @@ class GridView: UIView {
     }()
     
     func didRoate() {
-        collectionView.collectionViewLayout = collectionViewlayout
-        collectionView.reloadData()
+        collectionView.setNeedsUpdateConstraints()
+        collectionView.layoutIfNeeded()
     }
     
     func setupSubView() {

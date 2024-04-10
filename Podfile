@@ -9,3 +9,8 @@ target 'RandomGrid' do
 	pod 'RxDataSources'
 end
 
+target 'RandomGridTests' do
+	pod 'RxSwift'
+	pod 'RxDataSources'
+end
+

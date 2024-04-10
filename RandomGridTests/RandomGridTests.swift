@@ -10,27 +10,43 @@ import XCTest
 
 class RandomGridTests: XCTestCase {
 
+    var viewModel: GridViewModel!
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        viewModel = GridViewModel(row: 3, column: 4)
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func testNewElement() throws {
+        let input = (row: 5, column: 6)
+        viewModel.setupInput(row: input.row, column: input.column)
+        let selected = viewModel.selectedIndex
+        let result = viewModel.emitNewElement()
+        let expected = newElementExpected(input: input, selectedIndex: selected)
+        XCTAssertEqual(result, expected, "emitNewElement is not expected")
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func newElementExpected(input: (row: Int, column: Int), selectedIndex: CGPoint) -> Array<CustomSectionDataType> {
+        let inputRow = input.row
+        let inputColumm = input.column
+        let row = inputRow + 1
+        var _columns: [CustomSectionDataType] = []
+        for c in 0..<inputColumm {
+            var _row = Array.init(repeating: CollectionData(), count: row)
+            for r in 0..<row {
+                let selected = r == Int(selectedIndex.x) && c == Int(selectedIndex.y)
+                let id = "\(c)+\(r)"
+                if r == row-1 {
+                    _row[r] = CollectionData(id: id, isSelected: false, rowCount: inputRow, columnCount: inputColumm, dataType: RowDataType.buttnCell)
+                } else {
+                    _row[r] = CollectionData(id: id, isSelected: selected, rowCount: inputRow, columnCount: inputColumm, dataType: RowDataType.randomCell)
+                }
+                if c == Int(selectedIndex.y) {
+                    _row[r].columnSelected = true
+                }
+            }
+            _columns.append(CustomSectionDataType(model: "\(c)", items: _row))
         }
+        return _columns
     }
 
 }

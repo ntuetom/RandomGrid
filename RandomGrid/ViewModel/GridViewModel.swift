@@ -20,7 +20,6 @@ class GridViewModel {
     let collectionCellMinimumLineSpacing: CGFloat = 0
     let rowSource = PublishSubject<[CustomSectionDataType]>()
     let resetDidClick = PublishSubject<Void>()
-    let buttonRatio = 0.1
     
     var row: Int {
         return inputRow + 1
@@ -71,7 +70,6 @@ class GridViewModel {
             _columns.append(CustomSectionDataType(model: "\(c)", items: _row))
         }
         print("selectedIndex:",selectedIndex)
-//        print(_columns)
         return _columns
     }
     

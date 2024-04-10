@@ -60,7 +60,7 @@ class GridCollectionButtonCell: UICollectionViewCell {
         let lb = UILabel()
         lb.textColor = .lightGray
         lb.highlightedTextColor = .white
-        lb.font = UIFont.boldSystemFont(ofSize: 20)
+        lb.font = UIFont.boldSystemFont(ofSize: 30)
         lb.text = "確定"
         return lb
     }()
@@ -93,8 +93,9 @@ class GridCollectionButtonCell: UICollectionViewCell {
             make.trailing.bottom.equalToSuperview().offset(-kminOffset)
         }
         label.snp.makeConstraints { make in
+            make.top.equalTo(button).offset(kminOffset)
             make.centerX.equalTo(button)
-            make.bottom.equalTo(button).offset(-kOffset)
+            make.bottom.equalTo(button).offset(-kminOffset)
         }
     }
     

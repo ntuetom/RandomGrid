@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		289A42857744299376F47267 /* Pods_RandomGridTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 530FF714913F90CAABF62EF1 /* Pods_RandomGridTests.framework */; };
 		51B4731C2BC588FA0092E39F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B4731B2BC588FA0092E39F /* AppDelegate.swift */; };
 		51B473252BC588FC0092E39F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51B473242BC588FC0092E39F /* Assets.xcassets */; };
 		51B473282BC588FC0092E39F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51B473262BC588FC0092E39F /* LaunchScreen.storyboard */; };
@@ -64,8 +65,11 @@
 		51B4735C2BC58B680092E39F /* GridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridViewController.swift; sourceTree = "<group>"; };
 		51B4735D2BC58B680092E39F /* GridCollectionButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridCollectionButtonCell.swift; sourceTree = "<group>"; };
 		51B473622BC58BC60092E39F /* Macros.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Macros.swift; sourceTree = "<group>"; };
+		530FF714913F90CAABF62EF1 /* Pods_RandomGridTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RandomGridTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88D5BDFD50EF89D14628B887 /* Pods_RandomGrid.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RandomGrid.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C5BBC6333DF01D3C0D7009C /* Pods-RandomGrid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomGrid.debug.xcconfig"; path = "Target Support Files/Pods-RandomGrid/Pods-RandomGrid.debug.xcconfig"; sourceTree = "<group>"; };
+		C33056A7263F7A600BDD2A3A /* Pods-RandomGridTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomGridTests.release.xcconfig"; path = "Target Support Files/Pods-RandomGridTests/Pods-RandomGridTests.release.xcconfig"; sourceTree = "<group>"; };
+		E86AF8E2B6708BBF6E500B11 /* Pods-RandomGridTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomGridTests.debug.xcconfig"; path = "Target Support Files/Pods-RandomGridTests/Pods-RandomGridTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F9E6E8230465A7D7E0853EFD /* Pods-RandomGrid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomGrid.release.xcconfig"; path = "Target Support Files/Pods-RandomGrid/Pods-RandomGrid.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				289A42857744299376F47267 /* Pods_RandomGridTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				88D5BDFD50EF89D14628B887 /* Pods_RandomGrid.framework */,
+				530FF714913F90CAABF62EF1 /* Pods_RandomGridTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -216,6 +222,8 @@
 			children = (
 				9C5BBC6333DF01D3C0D7009C /* Pods-RandomGrid.debug.xcconfig */,
 				F9E6E8230465A7D7E0853EFD /* Pods-RandomGrid.release.xcconfig */,
+				E86AF8E2B6708BBF6E500B11 /* Pods-RandomGridTests.debug.xcconfig */,
+				C33056A7263F7A600BDD2A3A /* Pods-RandomGridTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -246,9 +254,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 51B473452BC588FD0092E39F /* Build configuration list for PBXNativeTarget "RandomGridTests" */;
 			buildPhases = (
+				BC5030F5378727497BFE773C /* [CP] Check Pods Manifest.lock */,
 				51B4732A2BC588FD0092E39F /* Sources */,
 				51B4732B2BC588FD0092E39F /* Frameworks */,
 				51B4732C2BC588FD0092E39F /* Resources */,
+				6E31A2ABC5E35E23C7DF5948 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -348,6 +358,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		6E31A2ABC5E35E23C7DF5948 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RandomGridTests/Pods-RandomGridTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RandomGridTests/Pods-RandomGridTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RandomGridTests/Pods-RandomGridTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7C3F35F7BAF5E3F66FD33F11 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -364,6 +391,28 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-RandomGrid-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC5030F5378727497BFE773C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RandomGridTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -626,6 +675,7 @@
 		};
 		51B473462BC588FD0092E39F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E86AF8E2B6708BBF6E500B11 /* Pods-RandomGridTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -646,6 +696,7 @@
 		};
 		51B473472BC588FD0092E39F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C33056A7263F7A600BDD2A3A /* Pods-RandomGridTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
